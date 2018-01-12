@@ -1,4 +1,4 @@
-FROM rancher/server
+FROM rancher/server:v1.6.14
 
 RUN apt-get update \
   && service mysql stop \
