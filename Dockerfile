@@ -1,4 +1,7 @@
-FROM rancher/server:v1.6.18
+FROM rancher/server:v1.6.18 as server
+FROM rancher/server-base:v1.0.0
+
+COPY --from=server / /
 
 RUN apt-get update \
   && service mysql stop \
