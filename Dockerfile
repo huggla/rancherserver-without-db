@@ -6,6 +6,6 @@ RUN service mysql stop \
   && apt-get autoremove -y --purge \
   && rm -rf /var/lib/apt/lists/*
   
-FROM rancher/server-base:v1.0.0
+FROM scratch
 
 COPY --from=server / /
