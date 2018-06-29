@@ -1,8 +1,13 @@
-FROM rancher/server
+FROM rancher/server:v1.6.18 as tmp
 
-RUN apt-get update \
-  && service mysql stop \
+RUN service mysql stop \
   && apt-get purge -y mysql-server \
   && rm -rf /etc/mysql/* \
   && apt-get autoremove -y --purge \
-  && rm -rf /var/lib/apt/lists/*
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/* /tmp/*
+  
+FROM scratch
+
+COPY --from=tmp / /
+
