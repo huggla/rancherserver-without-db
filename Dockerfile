@@ -11,8 +11,8 @@ RUN service mysql stop \
   && {
        echo '#!/bin/sh'
        set | xargs -0 -d \n echo "export"
-     } > /env-entrypoint \
-  && chmod +x /env-entrypoint
+     } > /usr/bin/env-entrypoint \
+  && chmod +x /usr/bin/env-entrypoint
   
 FROM scratch
 
