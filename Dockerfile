@@ -1,6 +1,6 @@
 FROM rancher/server:v1.6.21 as stage1
 
-ENV ENTRYPOINT="/usr/bin/entry"
+ARG ENTRYPOINT="/usr/bin/entry"
 
 RUN service mysql stop \
   && apt-get purge -y mysql-server \
