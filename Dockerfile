@@ -8,7 +8,7 @@ RUN service mysql stop \
   && apt-get autoremove -y --purge \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* \
-  && {env && echo ". $ENTRYPOINT"} > /env-entrypoint
+  && {set | xargs -0 -d \n echo "export"} > /env-entrypoint
   
 FROM scratch
 
