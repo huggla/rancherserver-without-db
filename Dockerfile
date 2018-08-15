@@ -8,8 +8,6 @@ RUN service mysql stop \
   && apt-get autoremove -y --purge \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* \
-  && usermod -u 999 mysql \
-  && groupmod -g 999 mysql \
   && { echo '#!/bin/sh' && export -p && echo "exec $ENTRYPOINT "'"$@"'; } > /usr/bin/env-entrypoint \
   && chmod +x /usr/bin/env-entrypoint
   
