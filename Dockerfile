@@ -1,4 +1,4 @@
-FROM rancher/server:v1.6.22 as tmp
+FROM rancher/server:v1.6.23 as tmp
 
 RUN service mysql stop \
   && apt-get purge -y mysql-server \
