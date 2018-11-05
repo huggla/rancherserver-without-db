@@ -6,7 +6,7 @@ RUN service mysql stop \
   && apt-get purge -y mysql-server \
   && rm -rf /etc/mysql/* \
   && apt-get autoremove -y --purge \
-  && apt-get clean \
+  && apt-get clean -y \
   && rm -rf /var/lib/apt/lists/* /tmp/* \
   && { echo '#!/bin/sh' && export -p && echo "exec $ENTRYPOINT "'"$@"'; } > /usr/bin/env-entrypoint \
   && chmod +x /usr/bin/env-entrypoint
