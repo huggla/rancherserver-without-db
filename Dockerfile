@@ -1,4 +1,4 @@
-FROM rancher/server:v1.6.28 as stage1
+FROM rancher/server:v1.6.29 as stage1
 
 ARG ENTRYPOINT="/usr/bin/entry"
 
