@@ -1,4 +1,4 @@
-FROM rancher/server:v1.6.29 as stage1
+FROM huggla/rancher-server as stage1
 
 ARG ENTRYPOINT="/usr/bin/entry"
 
